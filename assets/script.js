@@ -3,7 +3,7 @@ const teamMembers = [
     name: "Marco Bianchi",
     role: "Designer",
     email: "marcobianchi@team.com",
-    img:  "./assets/img/male1.png"
+    img: "./assets/img/male1.png"
   },
   {
     name: "Laura Rossi",
@@ -40,13 +40,14 @@ const teamMembers = [
 
 let rowEl = document.querySelector('.myTeam');
 
-let formEl = document.querySelector('form')
+/* let formEl = document.querySelector('form') */
+let buttonEl = document.getElementById('button')
 
 
 //function per generare card member
-function cardMember(member){
-  const {name, role, email, img} = member
-  return`
+function cardMember(member) {
+  const { name, role, email, img } = member
+  return `
       <div class="col-4">
         <div class="card text-white bg-dark m-3 p-3">
           <img src="${img}" alt="">
@@ -60,7 +61,7 @@ function cardMember(member){
 
 //ciclo for per iterare 
 for (let i = 0; i < teamMembers.length; i++) {
-  
+
   let member = teamMembers[i];
 
   let markup = cardMember(member)
@@ -70,21 +71,22 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 
 
-formEl.addEventListener('submit', (e) => {
+buttonEl.addEventListener('click', (e) => {
   e.preventDefault();
 
-  let firstNameEl = document.getElementById('name').value;
+  let nameCompleteEl = document.getElementById('name').value;
   let imgEl = document.getElementById('img').value;
   let jbPositionEl = document.getElementById('role').value;
   let emailEl = document.getElementById('email').value;
+  
 
   let NewMember = {
+    img,
     name,
     role,
     email,
-    img,
   }
+
   const markup = cardMember(NewMember);
-  
-  rowEl.insertAdjacentHTML('beforeend', markup)
+  rowEl.innerHTML += markup;
 })
