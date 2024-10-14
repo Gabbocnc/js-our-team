@@ -41,7 +41,8 @@ const teamMembers = [
 let rowEl = document.querySelector('.myTeam');
 
 /* let formEl = document.querySelector('form') */
-let buttonEl = document.getElementById('button')
+let buttonEl = document.getElementById('button');
+
 
 
 //function per generare card member
@@ -49,7 +50,7 @@ function cardMember(member) {
   const { name, role, email, img } = member
   return `
       <div class="col-lg-4 col-sm-12">
-        <div class="card text-white bg-dark m-3 p-3">
+        <div class="card text-white bg-dark m-3 p-3 border-primary">
           <img src="${img}" alt="">
           <h2>${name}</h2>
           <p>${role}</p>
@@ -75,7 +76,7 @@ buttonEl.addEventListener('click', (e) => {
   e.preventDefault();
 
   let nameCompleteEl = document.getElementById('name').value;
-  let imgEl = document.getElementById('img').value;
+  let imgEl = document.getElementById('img').value
   let jbPositionEl = document.getElementById('role').value;
   let emailEl = document.getElementById('email').value;
   
