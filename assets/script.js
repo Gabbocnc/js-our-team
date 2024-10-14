@@ -78,13 +78,13 @@ formEl.addEventListener('submit', (e) => {
   let jbPositionEl = document.getElementById('role').value;
   let emailEl = document.getElementById('email').value;
 
-  let member = {
+  let NewMember = {
     name,
     role,
     email,
     img,
   }
-  const markup = cardMember(member);
+  const markup = cardMember(NewMember);
   
   rowEl.insertAdjacentHTML('beforeend', markup)
 })
