@@ -48,8 +48,8 @@ function cardMember(member){
   const {name, role, email, img} = member
   return`
       <div class="col-4">
-        <div class="card text-white m-3 p-3">
-          <img src="${image}" alt="">
+        <div class="card text-white bg-dark m-3 p-3">
+          <img src="${img}" alt="">
           <h2>${name}</h2>
           <p>${role}</p>
           <p class="text-primary">${email}</p>
