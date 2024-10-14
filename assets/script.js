@@ -48,7 +48,7 @@ let buttonEl = document.getElementById('button')
 function cardMember(member) {
   const { name, role, email, img } = member
   return `
-      <div class="col-4">
+      <div class="col-lg-4 col-sm-12">
         <div class="card text-white bg-dark m-3 p-3">
           <img src="${img}" alt="">
           <h2>${name}</h2>
@@ -88,5 +88,5 @@ buttonEl.addEventListener('click', (e) => {
   }
 
   const markup = cardMember(NewMember);
-  rowEl.innerHTML += markup;
+  rowEl.insertAdjacentHTML('beforeend', markup);
 })
