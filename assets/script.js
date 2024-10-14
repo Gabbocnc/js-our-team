@@ -40,24 +40,43 @@ const teamMembers = [
 
 let rowEl = document.querySelector('.myTeam');
 
+let formEl = document.querySelector('form')
 
-//ciclo for per iterare 
 
-for (let i = 0; i < teamMembers.length; i++) {
-  let teamMember = teamMembers[i];
-
-  let { name, role, email, img } = teamMember;
-
-  let markup = `
+//function per generare card member
+function cardMember(member){
+  const {name, role, email, img} = member
+  return`
       <div class="col-4">
-        <div class="card">
-          <img src="${img}" alt="">
-          <h2>"${name}"</h2>
-          <p>"${role}"</p>
-          <p>"${email}"</p>
+        <div class="card text-white m-3 p-3">
+          <img src="${image}" alt="">
+          <h2>${name}</h2>
+          <p>${role}</p>
+          <p class="text-primary">${email}</p>
         </div>
       </div>
   `
-  rowEl.innerHTML += markup;
 }
 
+//ciclo for per iterare 
+for (let i = 0; i < teamMembers.length; i++) {
+  
+  let member = teamMembers[i];
+
+  let markup = cardMember(member)
+
+  rowEl.innerHTML += markup
+}
+
+
+
+
+/* formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let firstNameEl = document.getElementById('name').value;
+  let imageEl = document.getElementById('image').value;
+  let jbPositionEl = document.getElementById('role').value;
+  let emailEl = document.getElementById('email').value;
+
+}) */
