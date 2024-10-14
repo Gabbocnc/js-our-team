@@ -82,10 +82,10 @@ buttonEl.addEventListener('click', (e) => {
   
 
   let NewMember = {
-    img,
-    name,
-    role,
-    email,
+    img: imgEl ,
+    name : nameCompleteEl,
+    role : jbPositionEl,
+    email : emailEl,
   }
 
   const markup = cardMember(NewMember);
