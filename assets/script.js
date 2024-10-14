@@ -70,13 +70,21 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 
 
-
-/* formEl.addEventListener('submit', (e) => {
+formEl.addEventListener('submit', (e) => {
   e.preventDefault();
 
   let firstNameEl = document.getElementById('name').value;
-  let imageEl = document.getElementById('image').value;
+  let imgEl = document.getElementById('img').value;
   let jbPositionEl = document.getElementById('role').value;
   let emailEl = document.getElementById('email').value;
 
-}) */
+  let member = {
+    name,
+    role,
+    email,
+    img,
+  }
+  const markup = cardMember(member);
+  
+  rowEl.insertAdjacentHTML('beforeend', markup)
+})
