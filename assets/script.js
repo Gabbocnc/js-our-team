@@ -49,12 +49,13 @@ let buttonEl = document.getElementById('button');
 function cardMember(member) {
   const { name, role, email, img } = member
   return `
-      <div class="col-lg-4 col-sm-12">
-        <div class="card text-white bg-dark m-3 p-3 border-primary">
-          <img src="${img}" alt="">
-          <h2>${name}</h2>
-          <p>${role}</p>
-          <p class="text-primary">${email}</p>
+      <div class="col-lg-6 col-md-12 col-xl-6 col-sm-12">
+        <div class="card text-white bg-dark flex-row mb-3 ">
+        <img src="${img}"alt="">
+        <div class = "card-body">
+          <h2 class = "card-title">${name}</h2>
+          <p class = "card-text">${role}</p>
+          <p class="card-text text-primary">${email}</p></div>
         </div>
       </div>
   `
